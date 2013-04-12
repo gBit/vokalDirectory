@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-uo-n5a">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellIdentifierRolodex" rowHeight="80" id="eF5-rT-HP2">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD0-zp-eUI">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="184" id="9cY-He-eYV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsL-dQ-sjp">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lti-H7-y4A">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="y9w-4B-viV"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Lti-H7-y4A" firstAttribute="top" secondItem="eF5-rT-HP2" secondAttribute="top" type="default" id="I2d-wx-h4K"/>
+                                            <constraint firstItem="Lti-H7-y4A" firstAttribute="bottom" secondItem="eF5-rT-HP2" secondAttribute="bottom" type="default" id="JI3-ft-Wpe"/>
+                                            <constraint firstAttribute="bottom" secondItem="WsL-dQ-sjp" secondAttribute="bottom" constant="20" type="default" id="Z4I-Tf-Wde"/>
+                                            <constraint firstItem="WsL-dQ-sjp" firstAttribute="top" secondItem="yD0-zp-eUI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cBA-bA-TsZ"/>
+                                            <constraint firstItem="yD0-zp-eUI" firstAttribute="leading" secondItem="Lti-H7-y4A" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="evS-hE-IHt"/>
+                                            <constraint firstItem="Lti-H7-y4A" firstAttribute="leading" secondItem="eF5-rT-HP2" secondAttribute="leading" type="default" id="fHw-Nt-q2P"/>
+                                            <constraint firstItem="WsL-dQ-sjp" firstAttribute="leading" secondItem="Lti-H7-y4A" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mc9-y3-Fdx"/>
+                                            <constraint firstAttribute="trailing" secondItem="WsL-dQ-sjp" secondAttribute="trailing" constant="20" type="default" id="urD-aL-dcg"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="cEn-Av-CJ6"/>
+                                    <outlet property="delegate" destination="2" id="3kx-rn-XaG"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-en-Bmw">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="aQD-t2-dcp"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-TD-A82">
+                                <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aBE-uo-n5a" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ADq-Ol-p3w"/>
+                            <constraint firstItem="aBE-uo-n5a" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Jsy-0o-DAd"/>
+                            <constraint firstItem="D0J-en-Bmw" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="OYT-Ch-7B6"/>
+                            <constraint firstAttribute="trailing" secondItem="sb7-TD-A82" secondAttribute="trailing" constant="12" id="ULG-GT-z3A"/>
+                            <constraint firstItem="aBE-uo-n5a" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="YdI-EF-7Xc"/>
+                            <constraint firstItem="D0J-en-Bmw" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Zpw-Qk-VnS"/>
+                            <constraint firstItem="sb7-TD-A82" firstAttribute="top" secondItem="3" secondAttribute="top" constant="14" id="bJh-nn-gRO"/>
+                            <constraint firstItem="aBE-uo-n5a" firstAttribute="top" secondItem="D0J-en-Bmw" secondAttribute="bottom" type="default" id="oHI-9x-ikb"/>
+                            <constraint firstItem="D0J-en-Bmw" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="v8t-aR-8bt"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="sb7-TD-A82" id="fFv-T7-zf3"/>
+                        <outlet property="searchBar" destination="D0J-en-Bmw" id="0y9-Qn-EPb"/>
+                        <outlet property="vokalTableView" destination="aBE-uo-n5a" id="NpH-eU-lFI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
